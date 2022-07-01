@@ -8,6 +8,7 @@ import javax.persistence.Id;
 
 @Entity
 public class Bike {
+
     @Id
     @GeneratedValue
     private int id;
@@ -37,8 +38,6 @@ public class Bike {
         this.price = price;
         this.color = color;
     }
-
-
 
     public int getId() {
         return this.id;
@@ -94,7 +93,8 @@ public class Bike {
             return false;
         }
         final Bike bike = (Bike) o;
-        return this.id == bike.id && this.price == bike.price && this.name.equals(bike.name) && this.brand.equals(bike.brand) && this.color.equals(bike.color);
+        return this.id == bike.id && this.price == bike.price && this.name.equals(bike.name) && this.brand.equals(bike.brand) && this.color.equals(
+          bike.color);
     }
 
     @Override
