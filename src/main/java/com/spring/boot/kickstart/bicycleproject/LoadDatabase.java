@@ -18,10 +18,10 @@ class LoadDatabase {
     CommandLineRunner initDatabase(final BikeRepository repository) {
 
         return args -> {
-            log.info("Preloading " + repository.save(new Bike("Rogue", "fox", 2450, "black")));
-            log.info("Preloading " + repository.save(new Bike("Elite", "bmx", 2500, "red")));
-            log.info("Preloading " + repository.save(new Bike("Stolen", "bmx", 3500, "blue")));
+            log.info("Preloading " + repository.save(new Bike("Rogue","fox",2450,"black")));
+            log.info("Preloading " + repository.save(new Bike("Elite", "bmx",2500,"red")));
+
+            log.info("Preloading " + repository.save(new Bike("Stolen", "bmx",3500,"blue")));
         };
     }
-
 }
