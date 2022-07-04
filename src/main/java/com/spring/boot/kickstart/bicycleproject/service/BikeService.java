@@ -14,4 +14,6 @@ public interface BikeService {
 
     Bike updateBikeById(Bike bike, int id);
 
+    Bike findById(int id);
+
 }

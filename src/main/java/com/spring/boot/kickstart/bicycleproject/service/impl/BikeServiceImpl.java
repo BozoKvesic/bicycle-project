@@ -47,6 +47,11 @@ public class BikeServiceImpl implements BikeService {
         }).orElseThrow(() -> new BikeNotFoundException(id));
     }
 
+    @Override
+    public Bike findById(final int id) {
+        return getBikeById(id).orElseThrow(() -> new BikeNotFoundException(id));
+    }
+
     private Optional<Bike> getBikeById(final int id) {
         return repository.findById(id);
     }

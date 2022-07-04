@@ -14,4 +14,6 @@ public interface BikeFacade {
 
     Bike updateBikeById(Bike bike, int id);
 
+    Bike findById(int id);
+
 }

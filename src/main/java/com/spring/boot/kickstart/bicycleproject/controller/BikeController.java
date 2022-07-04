@@ -40,4 +40,8 @@ public class BikeController {
         return bikeFacade.updateBikeById(bike, id);
     }
 
+    @GetMapping("/bikes/{id}")
+    Bike getOneBike(@PathVariable final int id) {
+        return bikeFacade.findById(id);
+    }
 }
