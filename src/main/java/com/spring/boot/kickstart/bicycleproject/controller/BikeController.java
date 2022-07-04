@@ -15,8 +15,8 @@ public class BikeController {
     private BikeFacade bikeFacade;
 
     @PostMapping("/bikes")
-    public Bike newBike(@RequestBody final Bike newBike) {
-        return this.bikeFacade.newBike(newBike);
+    public Bike createNewBike(@RequestBody final Bike bike) {
+        return this.bikeFacade.createNewBike(bike);
     }
 
 }

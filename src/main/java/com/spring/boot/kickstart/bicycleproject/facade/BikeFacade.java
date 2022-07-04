@@ -4,6 +4,6 @@ import com.spring.boot.kickstart.bicycleproject.entity.Bike;
 
 public interface BikeFacade {
 
-    Bike newBike(Bike bike);
+    Bike createNewBike(Bike bike);
 
 }

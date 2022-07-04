@@ -14,7 +14,7 @@ public class BikeServiceImpl implements BikeService {
     private BikeRepository repository;
 
     @Override
-    public Bike newBike(final Bike bike) {
+    public Bike createNewBike(final Bike bike) {
         return this.repository.save(bike);
     }
 
