@@ -42,7 +42,7 @@ public class BikeFacadeImpl implements BikeFacade {
     }
 
     @Override
-    public Optional<List<Bike>> findAllByBrand(final String brand) {
+    public List<Bike> findAllByBrand(final String brand) {
         return bikeService.findAllByBrand(brand);
     }
 

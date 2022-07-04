@@ -17,6 +17,6 @@ public interface BikeService {
 
     Bike findById(int id);
 
-    Optional<List<Bike>> findAllByBrand(String brand);
+    List<Bike> findAllByBrand(String brand);
 
 }

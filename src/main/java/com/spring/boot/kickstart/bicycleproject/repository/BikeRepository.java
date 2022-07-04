@@ -9,6 +9,6 @@ import com.spring.boot.kickstart.bicycleproject.entity.Bike;
 
 public interface BikeRepository extends JpaRepository<Bike, Integer> {
 
-    Optional<List<Bike>> findAllByBrand(String brand);
+    List<Bike> findAllByBrand(String brand);
 
 }

@@ -46,8 +46,8 @@ public class BikeController {
         return bikeFacade.findById(id);
     }
 
-    @GetMapping("/bikes/getAllBrand/{brand}")
-    Optional<List<Bike>> getAllByBrand(@PathVariable final String brand) {
+    @GetMapping("/bikes/brand/{brand}")
+    List<Bike> getAllBrands(@PathVariable final String brand) {
         return bikeFacade.findAllByBrand(brand);
     }
 }
