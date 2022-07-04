@@ -6,4 +6,8 @@ public class BikeNotFoundException extends RuntimeException {
         super("Could not find bike by ID: " + id);
     }
 
+    public BikeNotFoundException(final String brand) {
+        super("Could not find bikes by brand: " + brand);
+    }
+
 }
