@@ -35,4 +35,9 @@ public class BikeFacadeImpl implements BikeFacade {
         return bikeService.updateBikeById(bike, id);
     }
 
+    @Override
+    public Bike findById(final int id) {
+        return bikeService.findById(id);
+    }
+
 }
