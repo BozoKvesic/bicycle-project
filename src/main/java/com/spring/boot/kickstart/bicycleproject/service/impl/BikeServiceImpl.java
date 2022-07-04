@@ -1,6 +1,7 @@
 package com.spring.boot.kickstart.bicycleproject.service.impl;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -28,7 +29,7 @@ public class BikeServiceImpl implements BikeService {
 
     @Override
     public void deleteById(final int id) {
-        if (isBikeExist(id)) {
+        if (getBikeById(id).isPresent()) {
             repository.deleteById(id);
         } else {
             throw new BikeNotFoundException(id);
@@ -37,20 +38,17 @@ public class BikeServiceImpl implements BikeService {
 
     @Override
     public Bike updateBikeById(final Bike bike, final int id) {
-        return repository.findById(id).map(currentBike -> {
+        return getBikeById(id).map(currentBike -> {
             currentBike.setName(bike.getName());
             currentBike.setBrand(bike.getBrand());
             currentBike.setPrice(bike.getPrice());
             currentBike.setColor(bike.getColor());
             return repository.save(currentBike);
-        }).orElseGet(() -> {
-            bike.setId(id);
-            return repository.save(bike);
-        });
+        }).orElseThrow(() -> new BikeNotFoundException(id));
     }
 
-    private boolean isBikeExist(final int id) {
-        return repository.findById(id).isPresent();
+    private Optional<Bike> getBikeById(final int id) {
+        return repository.findById(id);
     }
 
 }
