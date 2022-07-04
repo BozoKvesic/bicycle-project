@@ -4,7 +4,6 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
 
 import com.spring.boot.kickstart.bicycleproject.entity.Bike;
 import com.spring.boot.kickstart.bicycleproject.facade.BikeFacade;
@@ -18,22 +17,22 @@ public class BikeFacadeImpl implements BikeFacade {
 
     @Override
     public Bike createNewBike(final Bike bike) {
-        return this.bikeService.createNewBike(bike);
+        return bikeService.createNewBike(bike);
     }
 
     @Override
     public List<Bike> getAllBikes() {
-        return this.bikeService.getAllBikes();
+        return bikeService.getAllBikes();
     }
 
     @Override
     public void deleteById(final int id) {
-        this.bikeService.deleteById(id);
+        bikeService.deleteById(id);
     }
 
     @Override
     public Bike updateBikeById(final Bike bike, final int id) {
-        return this.bikeService.updateBikeById(bike,id);
+        return bikeService.updateBikeById(bike, id);
     }
 
 }

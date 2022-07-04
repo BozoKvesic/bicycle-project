@@ -22,24 +22,22 @@ public class BikeController {
 
     @PostMapping("/bikes")
     public Bike createNewBike(@RequestBody final Bike bike) {
-        return this.bikeFacade.createNewBike(bike);
+        return bikeFacade.createNewBike(bike);
     }
 
     @GetMapping("/bikes")
     List<Bike> getAllBikes() {
-        return this.bikeFacade.getAllBikes();
+        return bikeFacade.getAllBikes();
     }
 
     @DeleteMapping("/bikes/{id}")
     void deleteBike(@PathVariable final int id) {
-        this.bikeFacade.deleteById(id);
+        bikeFacade.deleteById(id);
     }
 
     @PutMapping("/bikes/{id}")
-    Bike updateBikeById(@RequestBody final Bike bike, @PathVariable int id) {
-
-        return this.bikeFacade.updateBikeById(bike, id);
-
+    Bike updateBikeById(@RequestBody final Bike bike, @PathVariable final int id) {
+        return bikeFacade.updateBikeById(bike, id);
     }
 
 }

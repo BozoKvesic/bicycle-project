@@ -15,4 +15,5 @@ public class BikeNotFoundAdvice {
     String bikeNotFoundHandler(final BikeNotFoundException ex) {
         return ex.getMessage();
     }
+
 }
