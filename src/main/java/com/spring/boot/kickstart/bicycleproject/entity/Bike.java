@@ -1,10 +1,15 @@
 package com.spring.boot.kickstart.bicycleproject.entity;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 public class Bike {
@@ -100,6 +105,18 @@ public class Bike {
     @Override
     public int hashCode() {
         return Objects.hash(this.id, this.name, this.brand, this.price, this.color);
+    }
+
+    @ManyToMany(mappedBy = "bikes")
+    private List<Bill> bills = new ArrayList<>();
+
+    @JsonIgnore
+    public List<Bill> getBills() {
+        return this.bills;
+    }
+
+    public void setBills(final List<Bill> bills) {
+        this.bills = bills;
     }
 
 }
