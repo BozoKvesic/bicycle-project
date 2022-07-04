@@ -12,4 +12,6 @@ public interface BikeService {
 
     void deleteById(int id);
 
+    Bike updateBikeById(Bike bike, int id);
+
 }

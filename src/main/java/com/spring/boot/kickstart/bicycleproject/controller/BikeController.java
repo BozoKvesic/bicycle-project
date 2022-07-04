@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -21,17 +22,22 @@ public class BikeController {
 
     @PostMapping("/bikes")
     public Bike createNewBike(@RequestBody final Bike bike) {
-        return this.bikeFacade.createNewBike(bike);
+        return bikeFacade.createNewBike(bike);
     }
 
     @GetMapping("/bikes")
     List<Bike> getAllBikes() {
-        return this.bikeFacade.getAllBikes();
+        return bikeFacade.getAllBikes();
     }
 
     @DeleteMapping("/bikes/{id}")
     void deleteBike(@PathVariable final int id) {
-        this.bikeFacade.deleteById(id);
+        bikeFacade.deleteById(id);
+    }
+
+    @PutMapping("/bikes/{id}")
+    Bike updateBikeById(@RequestBody final Bike bike, @PathVariable final int id) {
+        return bikeFacade.updateBikeById(bike, id);
     }
 
 }
