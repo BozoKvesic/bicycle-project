@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -32,6 +33,13 @@ public class BikeController {
     @DeleteMapping("/bikes/{id}")
     void deleteBike(@PathVariable final int id) {
         this.bikeFacade.deleteById(id);
+    }
+
+    @PutMapping("/bikes/{id}")
+    Bike updateBikeById(@RequestBody final Bike bike, @PathVariable int id) {
+
+        return this.bikeFacade.updateBikeById(bike, id);
+
     }
 
 }

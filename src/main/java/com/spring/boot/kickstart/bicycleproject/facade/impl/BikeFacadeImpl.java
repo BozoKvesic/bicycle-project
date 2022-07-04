@@ -31,4 +31,9 @@ public class BikeFacadeImpl implements BikeFacade {
         this.bikeService.deleteById(id);
     }
 
+    @Override
+    public Bike updateBikeById(final Bike bike, final int id) {
+        return this.bikeService.updateBikeById(bike,id);
+    }
+
 }
