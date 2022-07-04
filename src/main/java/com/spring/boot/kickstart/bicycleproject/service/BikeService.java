@@ -10,4 +10,6 @@ public interface BikeService {
 
     List<Bike> getAllBikes();
 
+    void deleteById(int id);
+
 }

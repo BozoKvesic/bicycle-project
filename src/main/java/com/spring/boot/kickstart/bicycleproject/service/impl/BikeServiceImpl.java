@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.spring.boot.kickstart.bicycleproject.entity.Bike;
+import com.spring.boot.kickstart.bicycleproject.exception.BikeNotFoundException;
 import com.spring.boot.kickstart.bicycleproject.repository.BikeRepository;
 import com.spring.boot.kickstart.bicycleproject.service.BikeService;
 
@@ -23,6 +24,19 @@ public class BikeServiceImpl implements BikeService {
     @Override
     public List<Bike> getAllBikes() {
         return this.repository.findAll();
+    }
+
+    @Override
+    public void deleteById(final int id) {
+        if(this.isBikeExist(id)){
+            this.repository.deleteById(id);}
+        else{
+            throw new BikeNotFoundException(id);
+        }
+    }
+
+    private boolean isBikeExist(int id){
+        return this.repository.findById(id).isPresent();
     }
 
 }
