@@ -10,4 +10,6 @@ public interface BikeFacade {
 
     List<Bike> getAllBikes();
 
+    void deleteById(int id);
+
 }
