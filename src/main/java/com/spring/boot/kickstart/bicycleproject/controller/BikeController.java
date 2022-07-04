@@ -1,6 +1,7 @@
 package com.spring.boot.kickstart.bicycleproject.controller;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -43,5 +44,10 @@ public class BikeController {
     @GetMapping("/bikes/{id}")
     Bike getOneBike(@PathVariable final int id) {
         return bikeFacade.findById(id);
+    }
+
+    @GetMapping("/bikes/brand/{brand}")
+    List<Bike> getAllBrands(@PathVariable final String brand) {
+        return bikeFacade.findAllByBrand(brand);
     }
 }

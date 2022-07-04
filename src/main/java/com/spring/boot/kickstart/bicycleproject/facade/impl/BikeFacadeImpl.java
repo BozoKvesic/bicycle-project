@@ -1,6 +1,7 @@
 package com.spring.boot.kickstart.bicycleproject.facade.impl;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -38,6 +39,11 @@ public class BikeFacadeImpl implements BikeFacade {
     @Override
     public Bike findById(final int id) {
         return bikeService.findById(id);
+    }
+
+    @Override
+    public List<Bike> findAllByBrand(final String brand) {
+        return bikeService.findAllByBrand(brand);
     }
 
 }

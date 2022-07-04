@@ -52,6 +52,14 @@ public class BikeServiceImpl implements BikeService {
         return getBikeById(id).orElseThrow(() -> new BikeNotFoundException(id));
     }
 
+    @Override
+    public List<Bike> findAllByBrand(final String brand) {
+        if (!repository.findAllByBrand(brand).isEmpty()) {
+            return this.repository.findAllByBrand(brand);
+        }
+        throw new BikeNotFoundException(brand);
+    }
+
     private Optional<Bike> getBikeById(final int id) {
         return repository.findById(id);
     }
