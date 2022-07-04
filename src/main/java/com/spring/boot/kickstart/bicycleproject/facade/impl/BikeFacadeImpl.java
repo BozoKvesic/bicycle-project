@@ -1,5 +1,7 @@
 package com.spring.boot.kickstart.bicycleproject.facade.impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
@@ -17,6 +19,11 @@ public class BikeFacadeImpl implements BikeFacade {
     @Override
     public Bike createNewBike(final Bike bike) {
         return this.bikeService.createNewBike(bike);
+    }
+
+    @Override
+    public List<Bike> getAllBikes() {
+        return this.bikeService.getAllBikes();
     }
 
 }

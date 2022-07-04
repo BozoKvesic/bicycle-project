@@ -1,5 +1,7 @@
 package com.spring.boot.kickstart.bicycleproject.service.impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,6 +18,11 @@ public class BikeServiceImpl implements BikeService {
     @Override
     public Bike createNewBike(final Bike bike) {
         return this.repository.save(bike);
+    }
+
+    @Override
+    public List<Bike> getAllBikes() {
+        return this.repository.findAll();
     }
 
 }
