@@ -7,6 +7,6 @@ import com.spring.boot.kickstart.bicycleproject.entity.Bill;
 
 public interface BillService {
 
-    Bill addNewBill(List<Bike> purchasedBicycles);
+    Bill createNewBill(int totalPrice, List<Bike> purchasedBicycles);
 
 }

@@ -18,13 +18,8 @@ public class BillServiceImpl implements BillService {
     private BillRepository repository;
 
     @Override
-    public Bill addNewBill(final List<Bike> purchasedBicycles) {
-        int totalPrice = 0;
-        for (final Bike bike : purchasedBicycles) {
-            totalPrice += bike.getPrice();
-        }
-        final Bill bill = new Bill(LocalDate.now(), totalPrice, purchasedBicycles);
-        return repository.save(bill);
+    public Bill createNewBill(final int totalPrice, final List<Bike> purchasedBicycles) {
+        return repository.save(new Bill(LocalDate.now(), totalPrice, purchasedBicycles));
     }
 
 }
