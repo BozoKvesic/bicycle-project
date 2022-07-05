@@ -10,6 +10,8 @@ public interface BillService {
 
     Bill createNewBill(int totalPrice, List<Bike> purchasedBicycles);
 
-    List<Bill> findAll(final LocalDate dateOfPurchase);
+    List<Bill> findAll();
+
+    List<Bill> findAllOnSpecificDate(LocalDate dateOfPurchase);
 
 }
