@@ -1,5 +1,6 @@
 package com.spring.boot.kickstart.bicycleproject.facade.impl;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,8 +17,8 @@ public class BillFacadeImpl implements BillFacade {
     private BillService billService;
 
     @Override
-    public List<Bill> findAll() {
-        return billService.findAll();
+    public List<Bill> findAll(final LocalDate dateOfPurchase) {
+        return billService.findAll(dateOfPurchase);
     }
 
 }

@@ -20,7 +20,7 @@ public class BillController {
 
     @GetMapping("/bills")
     List<Bill> allBills(@RequestParam(value = "dateOfPurchase", required = false) @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) final LocalDate dateOfPurchase) {
-        return billFacade.findAll();
+        return billFacade.findAll(dateOfPurchase);
     }
 
 }
