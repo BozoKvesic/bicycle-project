@@ -9,4 +9,6 @@ public interface BillService {
 
     Bill createNewBill(int totalPrice, List<Bike> purchasedBicycles);
 
+    List<Bill> findAll();
+
 }

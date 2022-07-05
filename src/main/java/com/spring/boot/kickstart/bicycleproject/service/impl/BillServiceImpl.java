@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.spring.boot.kickstart.bicycleproject.entity.Bike;
 import com.spring.boot.kickstart.bicycleproject.entity.Bill;
+import com.spring.boot.kickstart.bicycleproject.exception.BillNotFoundException;
 import com.spring.boot.kickstart.bicycleproject.repository.BillRepository;
 import com.spring.boot.kickstart.bicycleproject.service.BillService;
 
@@ -20,6 +21,14 @@ public class BillServiceImpl implements BillService {
     @Override
     public Bill createNewBill(final int totalPrice, final List<Bike> purchasedBicycles) {
         return repository.save(new Bill(LocalDate.now(), totalPrice, purchasedBicycles));
+    }
+
+    @Override
+    public List<Bill> findAll() {
+        if (!repository.findAll().isEmpty()) {
+            return repository.findAll();
+        }
+        throw new BillNotFoundException();
     }
 
 }
