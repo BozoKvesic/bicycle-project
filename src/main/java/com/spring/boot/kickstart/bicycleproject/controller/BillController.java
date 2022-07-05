@@ -19,12 +19,12 @@ public class BillController {
     private BillFacade billFacade;
 
     @GetMapping("/bills")
-    List<Bill> allBills() {
-        return billFacade.findAll();
+    List<Bill> getAllBills() {
+        return billFacade.findAllBills();
     }
 
     @GetMapping("/bills/{dateOfPurchase}")
-    List<Bill> getAllBillOnDateOfPurchase(@PathVariable @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) final LocalDate dateOfPurchase) {
+    List<Bill> getAllBillsOnDateOfPurchase(@PathVariable @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) final LocalDate dateOfPurchase) {
         return billFacade.findAllOnSpecificDate(dateOfPurchase);
     }
 

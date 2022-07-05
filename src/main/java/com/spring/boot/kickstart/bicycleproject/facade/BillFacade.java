@@ -7,7 +7,7 @@ import com.spring.boot.kickstart.bicycleproject.entity.Bill;
 
 public interface BillFacade {
 
-    List<Bill> findAll();
+    List<Bill> findAllBills();
 
     List<Bill> findAllOnSpecificDate(LocalDate dateOfPurchase);
 

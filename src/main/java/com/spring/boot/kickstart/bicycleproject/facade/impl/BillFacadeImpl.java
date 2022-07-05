@@ -18,8 +18,8 @@ public class BillFacadeImpl implements BillFacade {
     private BillService billService;
 
     @Override
-    public List<Bill> findAll() {
-        return billService.findAll();
+    public List<Bill> findAllBills() {
+        return billService.findAllBills();
     }
 
     @Override

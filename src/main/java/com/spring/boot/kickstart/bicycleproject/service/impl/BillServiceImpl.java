@@ -24,23 +24,19 @@ public class BillServiceImpl implements BillService {
     }
 
     @Override
-    public List<Bill> findAll() {
-
+    public List<Bill> findAllBills() {
         if (!repository.findAll().isEmpty()) {
             return repository.findAll();
         }
         throw new BillNotFoundException();
-
     }
 
     @Override
     public List<Bill> findAllOnSpecificDate(final LocalDate dateOfPurchase) {
-
         if (!repository.findAllByDateOfPurchase(dateOfPurchase).isEmpty()) {
             return repository.findAllByDateOfPurchase(dateOfPurchase);
         }
         throw new BillNotFoundException(dateOfPurchase);
-        
     }
 
 }
