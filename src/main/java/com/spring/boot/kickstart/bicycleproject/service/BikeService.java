@@ -19,6 +19,6 @@ public interface BikeService {
 
     List<Bike> findAllByBrand(String brand);
 
-    Bill billOrderBikes(List<Bike> purchasedBicycles);
+    Bill orderBikes(List<Bike> purchasedBicycles);
 
 }

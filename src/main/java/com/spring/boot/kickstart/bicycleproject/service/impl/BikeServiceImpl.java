@@ -66,11 +66,8 @@ public class BikeServiceImpl implements BikeService {
     }
 
     @Override
-    public Bill billOrderBikes(final List<Bike> purchasedBicycles) {
-        int totalPrice = 0;
-        for (final Bike bike : purchasedBicycles) {
-            totalPrice += bike.getPrice();
-        }
+    public Bill orderBikes(final List<Bike> purchasedBicycles) {
+        final int totalPrice = purchasedBicycles.stream().map(Bike::getPrice).reduce(0, Integer::sum);
         return billService.createNewBill(totalPrice, purchasedBicycles);
     }
 

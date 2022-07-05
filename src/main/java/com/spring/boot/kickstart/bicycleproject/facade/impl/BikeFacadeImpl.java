@@ -51,8 +51,8 @@ public class BikeFacadeImpl implements BikeFacade {
     }
 
     @Override
-    public Bill billOrderBikes(final List<Bike> purchasedBicycles) {
-        return bikeService.billOrderBikes(purchasedBicycles);
+    public Bill orderBikes(final List<Bike> purchasedBicycles) {
+        return bikeService.orderBikes(purchasedBicycles);
     }
 
 }

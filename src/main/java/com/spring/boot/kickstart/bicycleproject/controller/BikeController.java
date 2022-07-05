@@ -52,8 +52,8 @@ public class BikeController {
     }
 
     @PostMapping("/bills")
-    Bill billOrderBikes(@RequestBody final List<Bike> purchasedBicycles) {
-        return bikeFacade.billOrderBikes(purchasedBicycles);
+    Bill orderBikes(@RequestBody final List<Bike> purchasedBicycles) {
+        return bikeFacade.orderBikes(purchasedBicycles);
     }
 
 }
