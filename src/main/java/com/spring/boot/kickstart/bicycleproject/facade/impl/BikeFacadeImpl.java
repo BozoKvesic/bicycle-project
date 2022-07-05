@@ -1,20 +1,24 @@
 package com.spring.boot.kickstart.bicycleproject.facade.impl;
 
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.spring.boot.kickstart.bicycleproject.entity.Bike;
+import com.spring.boot.kickstart.bicycleproject.entity.Bill;
 import com.spring.boot.kickstart.bicycleproject.facade.BikeFacade;
 import com.spring.boot.kickstart.bicycleproject.service.BikeService;
+import com.spring.boot.kickstart.bicycleproject.service.BillService;
 
 @Component
 public class BikeFacadeImpl implements BikeFacade {
 
     @Autowired
     private BikeService bikeService;
+
+    @Autowired
+    private BillService billService;
 
     @Override
     public Bike createNewBike(final Bike bike) {
@@ -44,6 +48,11 @@ public class BikeFacadeImpl implements BikeFacade {
     @Override
     public List<Bike> findAllByBrand(final String brand) {
         return bikeService.findAllByBrand(brand);
+    }
+
+    @Override
+    public Bill orderBikes(final List<Bike> purchasedBicycles) {
+        return bikeService.orderBikes(purchasedBicycles);
     }
 
 }

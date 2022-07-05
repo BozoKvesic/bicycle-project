@@ -7,15 +7,20 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.spring.boot.kickstart.bicycleproject.entity.Bike;
+import com.spring.boot.kickstart.bicycleproject.entity.Bill;
 import com.spring.boot.kickstart.bicycleproject.exception.BikeNotFoundException;
 import com.spring.boot.kickstart.bicycleproject.repository.BikeRepository;
 import com.spring.boot.kickstart.bicycleproject.service.BikeService;
+import com.spring.boot.kickstart.bicycleproject.service.BillService;
 
 @Service
 public class BikeServiceImpl implements BikeService {
 
     @Autowired
     private BikeRepository repository;
+
+    @Autowired
+    private BillService billService;
 
     @Override
     public Bike createNewBike(final Bike bike) {
@@ -55,9 +60,15 @@ public class BikeServiceImpl implements BikeService {
     @Override
     public List<Bike> findAllByBrand(final String brand) {
         if (!repository.findAllByBrand(brand).isEmpty()) {
-            return this.repository.findAllByBrand(brand);
+            return repository.findAllByBrand(brand);
         }
         throw new BikeNotFoundException(brand);
+    }
+
+    @Override
+    public Bill orderBikes(final List<Bike> purchasedBicycles) {
+        final int totalPrice = purchasedBicycles.stream().map(Bike::getPrice).reduce(0, Integer::sum);
+        return billService.createNewBill(totalPrice, purchasedBicycles);
     }
 
     private Optional<Bike> getBikeById(final int id) {

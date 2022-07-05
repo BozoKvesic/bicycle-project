@@ -1,9 +1,9 @@
 package com.spring.boot.kickstart.bicycleproject.facade;
 
 import java.util.List;
-import java.util.Optional;
 
 import com.spring.boot.kickstart.bicycleproject.entity.Bike;
+import com.spring.boot.kickstart.bicycleproject.entity.Bill;
 
 public interface BikeFacade {
 
@@ -18,5 +18,7 @@ public interface BikeFacade {
     Bike findById(int id);
 
     List<Bike> findAllByBrand(String brand);
+
+    Bill orderBikes(List<Bike> purchasedBicycles);
 
 }

@@ -1,9 +1,9 @@
 package com.spring.boot.kickstart.bicycleproject.service;
 
 import java.util.List;
-import java.util.Optional;
 
 import com.spring.boot.kickstart.bicycleproject.entity.Bike;
+import com.spring.boot.kickstart.bicycleproject.entity.Bill;
 
 public interface BikeService {
 
@@ -18,5 +18,7 @@ public interface BikeService {
     Bike findById(int id);
 
     List<Bike> findAllByBrand(String brand);
+
+    Bill orderBikes(List<Bike> purchasedBicycles);
 
 }
