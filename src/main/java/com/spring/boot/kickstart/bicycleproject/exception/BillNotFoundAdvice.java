@@ -10,9 +10,9 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 public class BillNotFoundAdvice {
 
     @ResponseBody
-    @ExceptionHandler(BikeNotFoundException.class)
+    @ExceptionHandler(BillNotFoundException.class)
     @ResponseStatus(HttpStatus.NOT_FOUND)
-    String billNotFoundHandler(final BikeNotFoundException ex) {
+    String billNotFoundHandler(final BillNotFoundException ex) {
         return ex.getMessage();
     }
 
