@@ -45,7 +45,7 @@ public class Bike {
     }
 
     public int getId() {
-        return this.id;
+        return id;
     }
 
     public void setId(final int id) {
@@ -53,7 +53,7 @@ public class Bike {
     }
 
     public String getName() {
-        return this.name;
+        return name;
     }
 
     public void setName(final String name) {
@@ -61,7 +61,7 @@ public class Bike {
     }
 
     public String getBrand() {
-        return this.brand;
+        return brand;
     }
 
     public void setBrand(final String brand) {
@@ -69,7 +69,7 @@ public class Bike {
     }
 
     public int getPrice() {
-        return this.price;
+        return price;
     }
 
     public void setPrice(final int price) {
@@ -77,7 +77,7 @@ public class Bike {
     }
 
     public String getColor() {
-        return this.color;
+        return color;
     }
 
     public void setColor(final String color) {
@@ -86,7 +86,7 @@ public class Bike {
 
     @Override
     public String toString() {
-        return "Bike{" + "id=" + this.id + ", name='" + this.name + '\'' + ", brand='" + this.brand + '\'' + ", price=" + this.price + ", color='" + this.color + '\'' + '}';
+        return "Bike{" + "id=" + id + ", name='" + name + '\'' + ", brand='" + brand + '\'' + ", price=" + price + ", color='" + color + '\'' + '}';
     }
 
     @Override
@@ -94,17 +94,17 @@ public class Bike {
         if (this == o) {
             return true;
         }
-        if (o == null || this.getClass() != o.getClass()) {
+        if (o == null || getClass() != o.getClass()) {
             return false;
         }
         final Bike bike = (Bike) o;
-        return this.id == bike.id && this.price == bike.price && this.name.equals(bike.name) && this.brand.equals(bike.brand) && this.color.equals(
+        return id == bike.id && price == bike.price && name.equals(bike.name) && brand.equals(bike.brand) && color.equals(
           bike.color);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(this.id, this.name, this.brand, this.price, this.color);
+        return Objects.hash(id, name, brand, price, color);
     }
 
     @ManyToMany(mappedBy = "bikes")
@@ -112,7 +112,7 @@ public class Bike {
 
     @JsonIgnore
     public List<Bill> getBills() {
-        return this.bills;
+        return bills;
     }
 
     public void setBills(final List<Bill> bills) {
