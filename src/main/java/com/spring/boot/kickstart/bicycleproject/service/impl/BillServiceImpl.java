@@ -54,7 +54,7 @@ public class BillServiceImpl implements BillService {
         final float totalSaleCount = getTotalSaleCount(bills);
         if (totalSaleCount != 0) {
             map.put(
-              "Color and brend percentage sale", (getBillCountForBrandAndColor(bills, brand, color).get(0).floatValue() * 100) / totalSaleCount);
+              "Color and brand percentage sale", (getBillCountForBrandAndColor(bills, brand, color).get(0).floatValue() * 100) / totalSaleCount);
         }
         return map;
     }
@@ -69,7 +69,7 @@ public class BillServiceImpl implements BillService {
         }
         final float totalSaleCount = getTotalSaleCount(bills);
         if (totalSaleCount != 0) {
-            map.put("Brend " + brand + " percentage sale", (getBillCountForBrand(bills, brand).get(0).floatValue() * 100) / totalSaleCount);
+            map.put("Brand " + brand + " percentage sale", (getBillCountForBrand(bills, brand).get(0).floatValue() * 100) / totalSaleCount);
         }
         return map;
     }
