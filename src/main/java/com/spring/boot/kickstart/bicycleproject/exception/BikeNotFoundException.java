@@ -10,4 +10,8 @@ public class BikeNotFoundException extends RuntimeException {
         super("Could not find bikes by brand: " + brand);
     }
 
+    public BikeNotFoundException() {
+        super("Brand and color are equal null");
+    }
+
 }
