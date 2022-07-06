@@ -31,8 +31,8 @@ public class BillController {
     }
 
     @GetMapping("/statistic")
-    Map<String, Float> getStatistic(@RequestParam(value = "brend", required = false) final String brend, @RequestParam(value = "color", required = false) final String color) {
-        return billFacade.getStatistic(brend, color);
+    Map<String, Float> getStatistic(@RequestParam(value = "brand", required = false) final String brand, @RequestParam(value = "color", required = false) final String color) {
+        return billFacade.getStatistic(brand, color);
     }
 
 }

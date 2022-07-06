@@ -12,6 +12,6 @@ public interface BillFacade {
 
     List<Bill> findAllOnSpecificDate(LocalDate dateOfPurchase);
 
-    Map<String, Float> getStatistic(String brend, String color);
+    Map<String, Float> getStatistic(String brand, String color);
 
 }

@@ -15,9 +15,9 @@ public interface BillService {
 
     List<Bill> findAllOnSpecificDate(LocalDate dateOfPurchase);
 
-    Map<String, Float> getStatistic(String brend, String color);
+    Map<String, Float> getStatistic(String brand, String color);
 
-    Map<String, Float> getStatisticBrend(String brend);
+    Map<String, Float> getStatisticBrand(String brand);
 
     Map<String, Float> getStatisticColor(String color);
 

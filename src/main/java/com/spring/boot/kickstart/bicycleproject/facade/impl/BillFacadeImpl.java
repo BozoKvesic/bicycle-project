@@ -33,11 +33,11 @@ public class BillFacadeImpl implements BillFacade {
     }
 
     @Override
-    public Map<String, Float> getStatistic(final String brend, final String color) {
-        if (brend != null && color != null) {
-            return billService.getStatistic(brend, color);
-        } else if (brend != null) {
-            return billService.getStatisticBrend(brend);
+    public Map<String, Float> getStatistic(final String brand, final String color) {
+        if (brand != null && color != null) {
+            return billService.getStatistic(brand, color);
+        } else if (brand != null) {
+            return billService.getStatisticBrand(brand);
         } else if (color != null) {
             return billService.getStatisticColor(color);
         }
