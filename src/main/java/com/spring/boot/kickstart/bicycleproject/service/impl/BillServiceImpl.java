@@ -89,7 +89,7 @@ public class BillServiceImpl implements BillService {
         return map;
     }
 
-    public static List<Integer> getBillCountForBrandAndColor(final List<Bill> bills, final String brand, final String color) {
+    private static List<Integer> getBillCountForBrandAndColor(final List<Bill> bills, final String brand, final String color) {
         return bills
                  .stream()
                  .filter(bill -> bill.getDateOfPurchase().getYear() >= DataUtil.getCurrentYear())
@@ -102,7 +102,7 @@ public class BillServiceImpl implements BillService {
                  .collect(Collectors.toList());
     }
 
-    public static List<Integer> getBillCountForColor(final List<Bill> bills, final String color) {
+    private static List<Integer> getBillCountForColor(final List<Bill> bills, final String color) {
         return bills
                  .stream()
                  .filter(bill -> bill.getDateOfPurchase().getYear() >= DataUtil.getCurrentYear())
