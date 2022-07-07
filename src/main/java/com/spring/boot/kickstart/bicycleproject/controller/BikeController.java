@@ -27,7 +27,7 @@ public class BikeController {
     }
 
     @GetMapping("/bikes")
-    List<Bike> getAllBikes() {
+    public List<Bike> getAllBikes() {
         return bikeFacade.getAllBikes();
     }
 
