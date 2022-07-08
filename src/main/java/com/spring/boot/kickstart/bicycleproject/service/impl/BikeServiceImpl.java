@@ -21,7 +21,7 @@ public class BikeServiceImpl implements BikeService {
 
     @Autowired
     private BillService billService;
-
+    
     @Override
     public Bike createNewBike(final Bike bike) {
         return repository.save(bike);
