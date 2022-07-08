@@ -10,7 +10,7 @@ import com.spring.boot.kickstart.bicycleproject.facade.BikeFacade;
 import com.spring.boot.kickstart.bicycleproject.facade.BillFacade;
 
 @Controller
-public class BikeViewController {
+public class ViewController {
 
     @Autowired
     private BikeFacade bikeFacade;
